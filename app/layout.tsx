@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Formula188CM - Premium Height Growth Supplement",
   description:
     "Formula188CM is a scientifically formulated height growth supplement with 100% natural ingredients. Trusted by thousands worldwide.",
+  icons: {
+    icon: "/favicon.jpeg",
+  },
 }
 
 export default function RootLayout({

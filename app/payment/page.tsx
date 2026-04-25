@@ -102,7 +102,7 @@ function PaymentContent() {
             </div>
             <div className="p-4 bg-white border border-gray-200 rounded text-center shadow-sm">
               <p className="text-xs text-gray-500 uppercase font-bold mb-1">Delivery</p>
-              <p className="text-xl font-bold">4-5 Days</p>
+              <p className="text-xl font-bold">{method === "online" ? "3-4 Days" : "3-5 Days"}</p>
             </div>
             <div className="p-4 bg-white border border-gray-200 rounded text-center shadow-sm">
               <p className="text-xs text-gray-500 uppercase font-bold mb-1">Method</p>

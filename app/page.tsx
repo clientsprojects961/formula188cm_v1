@@ -99,7 +99,17 @@ export default function Home() {
     { name: "Rohit", text: "Using it for 3 months. I grew from 5'3 to 5'5. Just stay consistent and you will see results too." },
     { name: "Arjun", text: "This really works! I was stuck at 5'4 for years, and in 4 months I reached 5'7." },
     { name: "Sahil", text: "I didn’t believe at first, but after 3 months I can see clear results. Went from 5'6 to 5'8." },
-    { name: "Ritika", text: "Tried everything before, nothing worked. This actually did. From 5'2 to 5'5 in 5 months!" }
+    { name: "Ritika", text: "Tried everything before, nothing worked. This actually did. From 5'2 to 5'5 in 5 months!" },
+    { name: "Vishal", text: "Amazing product. I am 22 and still gained 2 inches in just 4 months. Highly recommended." },
+    { name: "Anjali", text: "I bought this for my younger brother and his height increased significantly. Very happy with the results!" },
+    { name: "Ravi", text: "I was skeptical, but the 100% natural ingredients convinced me. Seeing real changes now." },
+    { name: "Sneha", text: "Best height growth supplement I have ever used. No side effects at all." },
+    { name: "Karan", text: "Started seeing a difference after the 2nd month. Consistency is the key." },
+    { name: "Pooja", text: "Doctor recommended this to me. Great results, completely safe and natural." },
+    { name: "Amit", text: "The delivery was fast, and the packaging was premium. Product works exactly as described." },
+    { name: "Neha", text: "I have gained 1.5 inches in 3 months! I feel much more confident now." },
+    { name: "Vikas", text: "Worth every penny. This actually delivers what it promises." },
+    { name: "Priya", text: "It took some time, but after 5 months, I finally crossed 5'5. Thank you Formula188CM!" }
   ]
   const surnameOptions = ["Sharma", "Patel", "Gupta", "Verma", "Iyer"]
   const [reviews] = useState(() =>
@@ -117,8 +127,8 @@ export default function Home() {
 
     return (
       <div className="flex items-center gap-0.5">
-        {[...Array(fullStars)].map((_, i) => <Star key={`full-${i}`} className="w-4 h-4 fill-black text-black" />)}
-        {hasHalfStar && <StarHalf className="w-4 h-4 fill-black text-black" />}
+        {[...Array(fullStars)].map((_, i) => <Star key={`full-${i}`} className="w-4 h-4 fill-[#FFB800] text-[#FFB800]" />)}
+        {hasHalfStar && <StarHalf className="w-4 h-4 fill-[#FFB800] text-[#FFB800]" />}
         {[...Array(emptyStars)].map((_, i) => <Star key={`empty-${i}`} className="w-4 h-4 fill-gray-200 text-gray-300" />)}
       </div>
     )
@@ -148,13 +158,13 @@ export default function Home() {
               {/* Carousel Arrows */}
               <button 
                 onClick={prevSlide}
-                className="absolute left-4 p-2 bg-white/80 hover:bg-white text-black rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute left-4 p-2 bg-white/80 hover:bg-white text-black rounded-full shadow-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button 
                 onClick={nextSlide}
-                className="absolute right-4 p-2 bg-white/80 hover:bg-white text-black rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute right-4 p-2 bg-white/80 hover:bg-white text-black rounded-full shadow-md opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
@@ -234,16 +244,31 @@ export default function Home() {
               </div>
 
               {/* Variant Selector */}
-              <div className="grid grid-cols-2 gap-2 md:gap-4 mb-6">
+              <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
+                {/* Pack of 1 */}
+                <button 
+                  onClick={() => { setActiveVariant("pack1"); setQuantity(1); }}
+                  className={`relative flex flex-col rounded-xl overflow-hidden border-2 text-center bg-white transition-all ${activeVariant === "pack1" || quantity === 1 ? "border-black shadow-md" : "border-gray-200"}`}
+                >
+                  <div className="p-2 md:p-4 flex-1 flex flex-col items-center justify-between w-full">
+                    <img src="/c1.jpeg" alt="Pack of 1" className="w-12 h-12 md:w-20 md:h-20 object-contain mb-2 mix-blend-multiply" />
+                    <div className="font-bold text-black text-[10px] md:text-sm mb-1 leading-tight">Pack of 1</div>
+                    <div className="flex flex-col items-center justify-center text-[10px] md:text-sm w-full">
+                      <span className="text-gray-400 line-through">Rs. 1,999</span>
+                      <span className="font-bold text-black">Rs. 1,099</span>
+                    </div>
+                  </div>
+                </button>
+
                 {/* Pack of 2 */}
                 <button 
                   onClick={() => { setActiveVariant("pack2"); setQuantity(2); }}
                   className={`relative flex flex-col rounded-xl overflow-hidden border-2 text-center bg-white transition-all ${activeVariant === "pack2" || quantity === 2 ? "border-black shadow-md" : "border-gray-200"}`}
                 >
                   <div className="p-2 md:p-4 flex-1 flex flex-col items-center justify-between w-full">
-                    <img src="/c1.jpeg" alt="Pack of 2" className="w-16 h-16 md:w-24 md:h-24 object-contain mb-2 mix-blend-multiply" />
-                    <div className="font-bold text-black text-xs md:text-sm mb-1">Pack of 2</div>
-                    <div className="flex items-center justify-center gap-1 md:gap-2 text-[10px] md:text-sm w-full">
+                    <img src="/c2.jpeg" alt="Pack of 2" className="w-12 h-12 md:w-20 md:h-20 object-contain mb-2 mix-blend-multiply" />
+                    <div className="font-bold text-black text-[10px] md:text-sm mb-1 leading-tight">Pack of 2</div>
+                    <div className="flex flex-col items-center justify-center text-[10px] md:text-sm w-full">
                       <span className="text-gray-400 line-through">Rs. 3,998</span>
                       <span className="font-bold text-black">Rs. 2,198</span>
                     </div>
@@ -256,9 +281,9 @@ export default function Home() {
                   className={`relative flex flex-col rounded-xl overflow-hidden border-2 text-center bg-white transition-all ${activeVariant === "pack3" || quantity === 3 ? "border-black shadow-md" : "border-gray-200"}`}
                 >
                   <div className="p-2 md:p-4 flex-1 flex flex-col items-center justify-between w-full">
-                    <img src="/c2.jpeg" alt="Pack of 3" className="w-16 h-16 md:w-24 md:h-24 object-contain mb-2 mix-blend-multiply" />
-                    <div className="font-bold text-black text-xs md:text-sm mb-1">Pack of 3</div>
-                    <div className="flex items-center justify-center gap-1 md:gap-2 text-[10px] md:text-sm w-full">
+                    <img src="/c3.jpeg" alt="Pack of 3" className="w-12 h-12 md:w-20 md:h-20 object-contain mb-2 mix-blend-multiply" />
+                    <div className="font-bold text-black text-[10px] md:text-sm mb-1 leading-tight">Pack of 3</div>
+                    <div className="flex flex-col items-center justify-center text-[10px] md:text-sm w-full">
                       <span className="text-gray-400 line-through">Rs. 5,997</span>
                       <span className="font-bold text-black">Rs. 3,297</span>
                     </div>
@@ -267,7 +292,8 @@ export default function Home() {
               </div>
 
               {/* Quantity */}
-              <div>
+              <div className="hidden">
+                {/* Quantity hidden since variant boxes directly control quantity */}
                 <h3 className="text-sm font-bold text-black mb-3 uppercase tracking-wide">Quantity</h3>
                 <div className="flex items-center border border-gray-300 rounded-md w-32">
                   <button onClick={() => handleQuantityChange(quantity - 1)} className="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-black hover:bg-gray-50 transition-colors">
@@ -292,9 +318,9 @@ export default function Home() {
                 </Link>
                 
                 {/* Delivery Estimate */}
-                <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-500">
-                  <Calendar className="w-4 h-4" />
-                  <p>Estimated Delivery by <span className="font-bold text-black">{formattedDeliveryDate}</span></p>
+                <div className="mt-4 flex flex-col items-center justify-center gap-1 text-xs md:text-sm text-gray-600 font-medium">
+                  <p>Prepaid Orders: <span className="font-bold text-black">3-4 Days Delivery</span></p>
+                  <p>Cash on Delivery: <span className="font-bold text-black">3-5 Days Delivery</span></p>
                 </div>
               </div>
 
@@ -495,22 +521,18 @@ export default function Home() {
                   <div key={row.stars} className="flex items-center gap-3 text-sm">
                     <div className="w-16 text-gray-600 font-bold">{row.stars} Stars</div>
                     <div className="flex-1 h-2 bg-gray-100 rounded overflow-hidden">
-                      <div className="h-full bg-black rounded" style={{ width: `${row.pct}%` }}></div>
+                      <div className="h-full bg-[#FFB800] rounded" style={{ width: `${row.pct}%` }}></div>
                     </div>
                     <div className="w-8 text-right text-gray-500 font-bold">{row.pct}%</div>
                   </div>
                 ))}
               </div>
-
-              <button className="w-full py-4 border-2 border-black font-bold text-sm text-black uppercase tracking-wider rounded hover:bg-black hover:text-white transition-colors">
-                Write a Review
-              </button>
             </div>
 
             {/* Review Cards Grid/Carousel */}
             <div className="w-full lg:w-2/3">
               <div className="flex lg:grid lg:grid-cols-2 gap-6 overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 no-scrollbar snap-x">
-                {reviews.slice(0, 4).map((r, idx) => (
+                {reviews.map((r, idx) => (
                   <div key={idx} className="flex-shrink-0 w-[85%] lg:w-full snap-center bg-[#F9F9F9] p-6 rounded-xl border border-gray-200">
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">

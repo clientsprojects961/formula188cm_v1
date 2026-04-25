@@ -278,7 +278,7 @@ function CheckoutContent() {
                 <div className="space-y-3 border-b border-gray-200 pb-4 mb-4 text-sm text-gray-600">
                   <div className="flex justify-between">
                     <span>Delivery</span>
-                    <span className="font-bold text-black">4-5 Days</span>
+                    <span className="font-bold text-black">{paymentMethod === "online" ? "3-4 Days" : "3-5 Days"}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Shipping</span>
