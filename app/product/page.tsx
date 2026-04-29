@@ -339,7 +339,7 @@ export default function ProductPage() {
         <div id="reviews" className="mt-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-3 capitalize tracking-tight">Real Customers Real Reviews</h2>
-            <p className="text-gray-500 font-medium">Trusted by 30,000+ Customers</p>
+            <p className="text-gray-500 font-medium">Trusted by 4,874 Customers</p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-12">

@@ -18,7 +18,7 @@ export function FloatingVideo() {
   if (!isVisible) return null
 
   return (
-    <div className="fixed bottom-4 left-4 z-50 w-32 md:w-48 aspect-[9/16] rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 bg-black group transition-transform hover:scale-105">
+    <div className="fixed bottom-[85px] md:bottom-4 left-4 z-[60] w-32 md:w-48 aspect-[9/16] rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 bg-black group transition-transform hover:scale-105">
       <video
         ref={videoRef}
         src="/formulavideo.mp4"
@@ -34,7 +34,7 @@ export function FloatingVideo() {
       
       <button
         onClick={() => setIsVisible(false)}
-        className="absolute top-2 right-2 p-1.5 bg-black/50 hover:bg-black/80 rounded-full text-white backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity"
+        className="absolute top-2 right-2 p-1.5 bg-black/60 hover:bg-black/80 rounded-full text-white backdrop-blur-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
         aria-label="Close video"
       >
         <X className="w-3 h-3 md:w-4 md:h-4" />

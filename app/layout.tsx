@@ -1,16 +1,18 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { Inter } from "next/font/google"
+import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 import { FloatingVideo } from "@/components/floating-video"
+import { StickyBuyBar } from "@/components/sticky-buy-bar"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-plus-jakarta" })
 
 export const metadata: Metadata = {
-  title: "Formula188CM - Premium Height Growth Supplement",
+  title: "Formula188CM — India's #1 Height Growth Supplement | Grow 2–4 Inches Naturally",
   description:
-    "Formula188CM is a scientifically formulated height growth supplement with 100% natural ingredients. Trusted by thousands worldwide.",
+    "Trusted by 4,874 Indians. Formula188CM helps adults aged 18–28 grow 2–4 inches naturally, with zero side effects. Doctor recommended. Results guaranteed or full refund.",
   icons: {
     icon: "/favicon.jpeg",
   },
@@ -23,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased`}>
         {/* Meta Pixel */}
         <Script
           id="meta-pixel"
@@ -43,7 +45,6 @@ export default function RootLayout({
             `,
           }}
         />
-
         <noscript>
           <img
             height="1"
@@ -56,6 +57,7 @@ export default function RootLayout({
 
         {children}
         <FloatingVideo />
+        <StickyBuyBar />
       </body>
     </html>
   )

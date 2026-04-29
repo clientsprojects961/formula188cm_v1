@@ -4,34 +4,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0); /* #FFFFFF */
-  --foreground: oklch(0.145 0 0); /* #111111 */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.145 0 0); /* Black */
-  --primary-foreground: oklch(1 0 0); /* White */
-  --secondary: oklch(0.97 0 0); /* #F5F5F5 */
-  --secondary-foreground: oklch(0.145 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0); /* Gray */
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.922 0 0); /* #E5E5E5 */
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.145 0 0);
-  --radius: 0.25rem; /* Slight 4px radius */
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --background: #FFFFFF;
+  --foreground: #111111;
+  --card: #FFFFFF;
+  --card-foreground: #111111;
+  --popover: #FFFFFF;
+  --popover-foreground: #111111;
+  --primary: #16a34a;
+  --primary-foreground: #FFFFFF;
+  --secondary: #4b5563;
+  --secondary-foreground: #111111;
+  --muted: #f9fafb;
+  --muted-foreground: #6b7280;
+  --accent: #FFD700;
+  --accent-foreground: #111111;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #16a34a;
+  --radius: 0.75rem;
+  --sidebar: #111111;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #16a34a;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #333333;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #333333;
+  --sidebar-ring: #16a34a;
 }
 
 .dark {
@@ -58,6 +56,7 @@
 
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -103,6 +102,23 @@
   html, body {
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  p {
+    max-width: 65ch;
+    margin-bottom: 1rem;
+  }
+  section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media (max-width: 640px) {
+    section {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
   }
 }
 
