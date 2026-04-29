@@ -8,11 +8,12 @@ import { BeforeAfterSlider } from "@/components/before-after-slider"
 import { PincodeChecker } from "@/components/pincode-checker"
 import { ProductGallery } from "@/components/product-gallery"
 import { IngredientsSection } from "@/components/ingredients-section"
+import { MassOrders } from "@/components/mass-orders"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { ChevronLeft, ChevronRight, Minus, Pause, Play, Plus, Star, StarHalf, Volume2, VolumeX } from "lucide-react"
 
 const usageSteps = [
-  "Take 1 capsule every morning with a full glass of warm water - right after waking up.",
+  "1 capsule daily after breakfast with Normal water.",
   "Stay consistent daily. Growth happens during sleep - the formula works while you rest.",
   "Most customers see measurable changes in 6-10 weeks. Full results build over 3-6 months.",
 ]
@@ -21,7 +22,7 @@ const howItWorksCards = [
   {
     step: "01",
     title: "Take Daily",
-    desc: "Take 1 capsule every morning with warm water. No skipping.",
+    desc: "1 capsule daily after breakfast with Normal water. No skipping.",
   },
   {
     step: "02",
@@ -181,7 +182,7 @@ export default function Home() {
 
                 <div className="flex items-center gap-2 mb-4">
                   {renderStars(4.5)}
-                  <span className="text-[13px] text-secondary font-medium">Trusted by 4,874 customers across India</span>
+                  <span className="text-[13px] text-secondary font-medium">Trusted by 28,567+ customers across India</span>
                 </div>
               </div>
 
@@ -278,9 +279,10 @@ export default function Home() {
         </div>
 
         <IngredientsSection />
+        <MassOrders />
 
         <section className="py-[60px] px-4 sm:px-5 max-w-[680px] mx-auto animate-fade-in-up" id="benefits">
-          <h2 className="text-[clamp(24px,5vw,36px)] font-heading font-bold text-black text-center mb-2 leading-tight">The Reason 4,874 People Finally Grew</h2>
+          <h2 className="text-[clamp(24px,5vw,36px)] font-heading font-bold text-black text-center mb-2 leading-tight">The Reason 28,567+ People Finally Grew</h2>
           <p className="text-center text-sm md:text-base text-secondary mb-8">Not luck. Not genetics. The right formula, at the right time.</p>
           <div className="flex flex-col gap-4">
             {[
@@ -429,7 +431,7 @@ export default function Home() {
 
         <div id="reviews" className="mt-24 pt-8 border-t border-border">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-black mb-3 tracking-tight">4,874 Indians Grew. Read Their Stories.</h2>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-black mb-3 tracking-tight">28,567+ Indians Grew. Read Their Stories.</h2>
             <p className="text-secondary font-medium">Verified purchases only. Every review is real.</p>
           </div>
 
@@ -437,7 +439,7 @@ export default function Home() {
             <div className="w-full lg:w-1/3">
               <div className="flex items-center gap-3 mb-6">
                 {renderStars(4.5)}
-                <span className="text-sm text-secondary font-bold">4,874 Reviews</span>
+                <span className="text-sm text-secondary font-bold">17,564 Reviews</span>
               </div>
               <div className="space-y-3 mb-8">
                 {[{ stars: 5, pct: 76 }, { stars: 4, pct: 18 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 1 }].map((row) => (
@@ -501,7 +503,7 @@ export default function Home() {
             Still Thinking About It?
           </h2>
           <p className="text-gray-300 text-base md:text-lg mb-10 relative z-10 max-w-2xl mx-auto">
-            4,874 people took a chance. Most of them wish they&apos;d started sooner. Don&apos;t let another month pass by without taking action.
+            28,567+ People took a chance. Most of them wish they&apos;d started sooner. Don&apos;t let another month pass by without taking action.
           </p>
           <Link href="/checkout?quantity=1" className="inline-flex items-center justify-center gap-2 bg-[#FFD700] hover:bg-[#e6c200] text-[#111111] font-extrabold px-8 md:px-10 py-4 md:py-5 rounded-2xl shadow-[0_8px_30px_rgba(255,215,0,0.3)] transition-all hover:scale-105 active:scale-95 relative z-10 text-lg">
             Start My Growth Journey <span>→</span>

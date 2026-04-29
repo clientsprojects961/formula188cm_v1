@@ -12,7 +12,7 @@ const plusJakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-pl
 export const metadata: Metadata = {
   title: "Formula188CM — India's #1 Height Growth Supplement | Grow 2–4 Inches Naturally",
   description:
-    "Trusted by 4,874 Indians. Formula188CM helps adults aged 18–28 grow 2–4 inches naturally, with zero side effects. Doctor recommended. Results guaranteed or full refund.",
+    "Trusted by 28,567+ Indians. Formula188CM helps adults aged 18–28 grow 2–4 inches naturally, with zero side effects. Doctor recommended. 100% Results Guaranteed.",
   icons: {
     icon: "/favicon.jpeg",
   },

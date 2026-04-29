@@ -322,7 +322,7 @@ export default function ProductPage() {
                   </div>
                   <div className="flex gap-4 items-start">
                     <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold shrink-0">2</div>
-                    <p className="mt-1">Take 1 capsule daily after breakfast.</p>
+                    <p className="mt-1">1 capsule daily after breakfast with Normal water.</p>
                   </div>
                   <div className="flex gap-4 items-start">
                     <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold shrink-0">3</div>
@@ -339,7 +339,7 @@ export default function ProductPage() {
         <div id="reviews" className="mt-24">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-3 capitalize tracking-tight">Real Customers Real Reviews</h2>
-            <p className="text-gray-500 font-medium">Trusted by 4,874 Customers</p>
+            <p className="text-gray-500 font-medium">Trusted by 28,567+ customers</p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-12">
