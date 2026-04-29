@@ -94,7 +94,7 @@ export default function Home() {
     const video = testimonialVideoRef.current
     if (!video) return
     if (video.paused) {
-      await video.play().catch(() => {})
+      await video.play().catch(() => { })
       setIsPlaying(true)
       return
     }
@@ -182,7 +182,7 @@ export default function Home() {
 
                 <div className="flex items-center gap-2 mb-4">
                   {renderStars(4.5)}
-                  <span className="text-[13px] text-secondary font-medium">Trusted by 28,567+ customers across India</span>
+                  <span className="text-[13px] text-secondary font-medium">Trusted by 16,527+ customers across India</span>
                 </div>
               </div>
 
@@ -498,7 +498,7 @@ export default function Home() {
         <section className="mt-24 mb-12 text-center rounded-[2rem] bg-[#111111] text-white p-10 md:p-16 shadow-[0_20px_60px_rgba(22,163,74,0.15)] relative overflow-hidden border-2 border-[#222222]">
           <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-[#16a34a]/20 to-transparent pointer-events-none" />
           <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-[#16a34a] blur-[120px] rounded-full opacity-20 pointer-events-none" />
-          
+
           <h2 className="text-3xl md:text-5xl font-heading font-extrabold mb-4 relative z-10 text-white tracking-tight">
             Still Thinking About It?
           </h2>

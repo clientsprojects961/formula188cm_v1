@@ -2,14 +2,15 @@ export function Footer() {
   return (
     <footer className="bg-[#111111] text-gray-300 pt-12 pb-32 md:pb-12 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Top Contact Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-800 pb-12 mb-12 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-2 uppercase tracking-wide text-white">Get In Touch</h3>
             <div className="flex flex-col gap-1 text-gray-400 text-sm">
-              <p>Email: formula188cm@gmail.com</p>
               <p>WhatsApp: +91 8989252740</p>
+              <p>Email: formula188cm@gmail.com</p>
+
             </div>
           </div>
         </div>
@@ -40,7 +41,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>© 2025 Formula188CM. All rights reserved.</p>
           <div className="flex gap-4">
