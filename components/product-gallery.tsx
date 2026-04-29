@@ -1,6 +1,6 @@
 "use client"
 import { useMemo, useRef, useState } from "react"
-import { Pause, Play, ShieldCheck, Truck, RotateCcw, Volume2, VolumeX } from "lucide-react"
+import { Pause, Play, ShieldCheck, Truck, RotateCcw, Volume2, VolumeX, ChevronLeft, ChevronRight } from "lucide-react"
 
 const media = [
  
@@ -62,6 +62,16 @@ export function ProductGallery() {
     setProgress(nextProgress)
   }
 
+  const goNext = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setActive((prev) => (prev + 1) % media.length)
+  }
+
+  const goPrev = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    setActive((prev) => (prev - 1 + media.length) % media.length)
+  }
+
   return (
     <div className="flex flex-col gap-3 w-full">
       <div className="flex flex-nowrap overflow-x-auto no-scrollbar gap-2 text-[10px] sm:text-[11px] font-bold text-secondary whitespace-nowrap pb-1">
@@ -72,7 +82,7 @@ export function ProductGallery() {
           <Truck className="w-3.5 h-3.5" /> 🧬 Works After Age 21
         </span>
         <span className="bg-card px-2.5 py-1 rounded-full border border-border flex items-center gap-1 shrink-0">
-          <RotateCcw className="w-3.5 h-3.5" /> ↩️ Results or Refund
+          <RotateCcw className="w-3.5 h-3.5" /> ↩️ Results Guaranteed
         </span>
       </div>
 
@@ -138,6 +148,22 @@ export function ProductGallery() {
             className={`w-full h-full object-cover transition-transform duration-400 ease-out mix-blend-multiply ${zoomed ? "scale-[1.08]" : "scale-100"}`}
           />
         )}
+        
+        {/* Navigation Buttons */}
+        <button
+          onClick={goPrev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/80 hover:bg-white text-black flex items-center justify-center shadow-lg transition-all z-20"
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
+        <button
+          onClick={goNext}
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/80 hover:bg-white text-black flex items-center justify-center shadow-lg transition-all z-20"
+          aria-label="Next image"
+        >
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
       </div>
 
       <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">

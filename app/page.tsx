@@ -48,6 +48,14 @@ export default function Home() {
   const [duration, setDuration] = useState(0)
   const testimonialVideoRef = useRef<HTMLVideoElement | null>(null)
 
+  const getDeliveryDate = (daysToAdd: number) => {
+    const d = new Date()
+    d.setDate(d.getDate() + daysToAdd)
+    return d.toLocaleDateString("en-IN", { month: "short", day: "numeric", timeZone: "Asia/Kolkata" })
+  }
+  const prepaidDate = getDeliveryDate(3)
+  const codDate = getDeliveryDate(4)
+
   const variantPricing: Record<string, { quantity: number; originalPrice: number; discountedPrice: number }> = {
     pack1: { quantity: 1, originalPrice: 1999, discountedPrice: 1099 },
     pack2: { quantity: 2, originalPrice: 3998, discountedPrice: 2198 },
@@ -181,7 +189,7 @@ export default function Home() {
                 <div className="flex flex-wrap items-baseline gap-2 md:gap-3 mb-1">
                   <span className="text-base md:text-lg text-gray-400 line-through font-medium">Rs. {price}.00</span>
                   <span className="text-2xl md:text-3xl font-bold text-black whitespace-nowrap">Rs. {discountedPrice}.00</span>
-                  <span className="bg-black text-white text-xs md:text-sm font-bold px-2 py-1 rounded whitespace-nowrap">({discountPercent}% off)</span>
+                  <span className="bg-red-600 text-white text-xs md:text-sm font-bold px-2 py-1 rounded whitespace-nowrap shadow-sm">({discountPercent}% off)</span>
                 </div>
                 <p className="text-xs text-gray-500">MRP (Inclusive of all Taxes).</p>
               </div>
@@ -227,7 +235,7 @@ export default function Home() {
                 <Link id="hero-cta" href={`/checkout?quantity=${quantity}`} className="flex items-center justify-center gap-2.5 w-full bg-[#FFD700] text-[#111111] text-[16px] sm:text-[17px] font-extrabold px-6 py-3.5 sm:py-4 rounded-xl no-underline tracking-wide mt-5 mb-2.5 transition-all duration-300 shadow-[0_4px_20px_rgba(255,215,0,0.4)] hover:bg-[#e6c200] hover:-translate-y-px active:translate-y-0 group">
                   <span>ORDER NOW →</span>
                 </Link>
-                <p className="text-center text-xs text-secondary m-0">Free delivery · Pay on arrival · Results guaranteed or full refund</p>
+                <p className="text-center text-xs text-secondary m-0">Free delivery · Pay on arrival · 100% Results Guaranteed</p>
               </div>
 
               <div className="rounded-xl border border-border p-4 bg-muted">
@@ -247,21 +255,21 @@ export default function Home() {
                   <span className="text-xl shrink-0">🚚</span>
                   <div>
                     <strong className="block text-xs font-bold text-foreground">Fast Delivery</strong>
-                    <p className="text-[11px] text-secondary m-0">Prepaid: 3-4 Days</p>
+                    <p className="text-[11px] text-secondary m-0">Prepaid: by {prepaidDate}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2.5 bg-card border border-border rounded-lg p-2.5 flex-1 min-w-[140px]">
                   <span className="text-xl shrink-0">💵</span>
                   <div>
                     <strong className="block text-xs font-bold text-foreground">Pay on Arrival</strong>
-                    <p className="text-[11px] text-secondary m-0">COD available nationwide</p>
+                    <p className="text-[11px] text-secondary m-0">COD: by {codDate}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2.5 bg-card border border-border rounded-lg p-2.5 flex-1 min-w-[140px]">
                   <span className="text-xl shrink-0">🔒</span>
                   <div>
                     <strong className="block text-xs font-bold text-foreground">100% Guaranteed</strong>
-                    <p className="text-[11px] text-secondary m-0">Results or full refund</p>
+                    <p className="text-[11px] text-secondary m-0">Results Guaranteed</p>
                   </div>
                 </div>
               </div>
@@ -279,7 +287,7 @@ export default function Home() {
               { icon: "🌿", title: "Zero Hormones. Zero Steroids.", desc: "Every capsule is free from synthetic hormones, steroids, and harmful additives. Safe for long-term daily use - verified by independent lab testing." },
               { icon: "⚗️", title: "Your Growth Plates Aren't Dead Yet", desc: "After 18, growth often slows because the body lacks key nutrients. Formula188CM delivers what your bones need to keep building." },
               { icon: "📈", title: "Works Even If You're 21, 24, or 27", desc: "Built for adults, not teenagers. 68% of customers are between 20-28 years old, and they gained an average of 2.3 inches." },
-              { icon: "🛡️", title: "If You Don't Grow, You Don't Pay", desc: "Complete a 3-month course and if you see no measurable change, you get a full refund." },
+              { icon: "🛡️", title: "If You Don't Grow, You Don't Pay", desc: "Complete a 3-month course and if you see no measurable change, you are completely covered." },
             ].map((b, i) => (
               <div key={i} className="flex items-start gap-4 p-4 px-5 bg-card border border-border rounded-2xl transition-shadow duration-200 hover:shadow-[0_10px_30px_rgba(2,70,46,0.06)] hover:border-primary/30">
                 <span className="text-2xl shrink-0 mt-0.5">{b.icon}</span>
@@ -499,7 +507,7 @@ export default function Home() {
             Start My Growth Journey <span>→</span>
           </Link>
           <p className="text-sm font-semibold text-[#16a34a] mt-6 relative z-10 flex items-center justify-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse" /> Results guaranteed or complete refund
+            <span className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse" /> Risk-Free Guarantee
           </p>
         </section>
       </main>
